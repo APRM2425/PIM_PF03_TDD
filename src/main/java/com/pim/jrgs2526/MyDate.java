@@ -77,7 +77,7 @@ public class MyDate {
     public MyDate(int day, Months month, int year){
         // B. Validación en el constructor (para que pasen los tests de fechas válidas/invalidas)
         // --B.1. Mejora
-        if (year < 0) throw new IllegalArgumentException(ERR_INVALID_YEAR);
+
         if (month == null) throw new IllegalArgumentException(ERR_INVALID_MONTH);
         int dim = daysInMonth(year, month);
         if (day < 1 || day > dim) throw new IllegalArgumentException(ERR_INVALID_DATE);
@@ -102,5 +102,13 @@ public class MyDate {
             throw new IllegalArgumentException(ERR_INVALID_DAY);
         }
         this.day = newDay;
+    }
+
+    // E. Error: cannot find symbol method setYear(int)
+    public void setYear(int newYear){
+        if (newYear < 0) throw new IllegalArgumentException(ERR_INVALID_YEAR);
+        int dim = daysInMonth(newYear, this.month);
+        if (this.day < 1 || this.day > dim) throw new IllegalArgumentException(ERR_INVALID_YEAR);
+        this.year = newYear;
     }
 }

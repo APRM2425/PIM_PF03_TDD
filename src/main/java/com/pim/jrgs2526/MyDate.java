@@ -34,4 +34,19 @@ public class MyDate {
             return null;
         }
     }
+    // A. Error: constructor MyDate … required: no arguments; found: int, Months, int
+    // ---A.1. CAMPOS (necesarios para los setters que prueban los tests)
+    private int year;
+    private Months month;
+    private int day;
+
+    // ---A.2. Constructor vacío
+    public MyDate(){ this.year=2000; this.month=Months.JANUARY; this.day=1; }
+
+    // ---A.3. Constructor con parámetros (de momento SOLO asigna)
+    public MyDate(int day, Months month, int year){
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
 }

@@ -86,4 +86,12 @@ public class MyDate {
         this.month = month;
         this.day = day;
     }
+    // C. Error: cannot find symbol method setMonth(...)
+    public void setMonth(Months newMonth){
+        if (newMonth == null) throw new IllegalArgumentException(ERR_INVALID_MONTH);
+        int dim = daysInMonth(this.year, newMonth);
+        // si el día actual NO cabe en el nuevo mes → ERR_INVALID_MONTH
+        if (this.day < 1 || this.day > dim) throw new IllegalArgumentException(ERR_INVALID_MONTH);
+        this.month = newMonth;
+    }
 }

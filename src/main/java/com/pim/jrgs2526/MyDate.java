@@ -94,4 +94,13 @@ public class MyDate {
         if (this.day < 1 || this.day > dim) throw new IllegalArgumentException(ERR_INVALID_MONTH);
         this.month = newMonth;
     }
+
+    // D. Error: cannot find symbol method setDay(int)
+    public void setDay(int newDay){
+        int dim = daysInMonth(this.year, this.month);
+        if (newDay < 1 || newDay > dim) {
+            throw new IllegalArgumentException(ERR_INVALID_DAY);
+        }
+        this.day = newDay;
+    }
 }
